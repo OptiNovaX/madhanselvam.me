@@ -1,24 +1,28 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { IBM_Plex_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import ScrollProgress from "@/components/ScrollProgress";
 import ScrollReveal from "@/components/ScrollReveal";
+import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 
+const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-mono", display: "swap" });
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Madhan Selvam | Expert Engineer — Data, AI, Cloud, Architecture, Platform",
-  description: "Madhan Selvam is an expert engineer and technical leader building enterprise data platforms, data warehouses, intelligent systems, cloud architectures, AI/ML and GenAI solutions, and Mainframe modernization at scale.",
-  metadataBase: new URL("https://madhanselvam.tech")
+  title: { default: "Madhan Selvam | Principal Engineer — Data, AI, Cloud", template: "%s — Madhan Selvam" },
+  description: "Madhan Selvam is a principal engineer and technical leader with 20+ years building enterprise data platforms, Lakehouses, cloud architectures and AI-ready infrastructure at PepsiCo, State Street and Nike.",
+  metadataBase: new URL("https://madhanselvam.me")
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
+    <html lang="en" className={`${mono.variable} ${sans.variable}`}>
       <body>
         <ScrollProgress />
+        <SiteNav />
         {children}
+        <SiteFooter />
         <ScrollReveal />
       </body>
     </html>

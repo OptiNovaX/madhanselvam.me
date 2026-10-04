@@ -1,4 +1,4 @@
-# madhanselvam.tech
+# madhanselvam.me
 
 Personal website for Madhan Selvam: Expert Engineer across Data, AI, Cloud, Architecture, and Platforms.
 
