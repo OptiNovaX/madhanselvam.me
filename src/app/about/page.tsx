@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { profile } from "@/content/profile";
 import EduGrid from "@/components/EduGrid";
-import TrackRecord from "@/components/TrackRecord";
+import { principalRoles } from "@/content/experience";
 import { lab } from "@/content/extras";
 
 export const metadata: Metadata = { title: "About", description: "Madhan Selvam — principal engineer and data architect: track record, architecture principles, education and an after-hours AI lab." };
@@ -21,8 +21,8 @@ export default function About() {
     <header className="page-hero shell">
       <span className="section-label">About</span>
       <h1>Building systems that endure.</h1>
-      <p>I&apos;m {profile.name} — a principal engineer who architects the data platforms enterprises run on. For 20+ years I&apos;ve taken mission-critical systems from Mainframe to Hadoop to governed, AI-ready Lakehouses on AWS and Azure Databricks, across consumer goods, retail, finance and healthcare.</p>
-      <TrackRecord />
+      <p>I&apos;m {profile.name} — a principal engineer who sets the technical direction for the data platforms enterprises run on. For over 2 decades I&apos;ve led the shift from Mainframe to DWH to Data Lake to cloud Lakehouse and AI-ready platforms — owning the architecture, raising the engineering bar, aligning business and technology leaders, and growing the engineers who build what comes next.</p>
+      <ul className="track roles">{principalRoles.map((r) => <li key={r.title} data-reveal><strong>{r.title}</strong><span>{r.line}</span></li>)}</ul>
     </header>
 
     <section className="section shell two-col">

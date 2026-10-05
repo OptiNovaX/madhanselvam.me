@@ -11,7 +11,7 @@ const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap
 
 export const metadata: Metadata = {
   title: { default: "Madhan Selvam | Principal Engineer — Data, AI, Cloud", template: "%s — Madhan Selvam" },
-  description: "Madhan Selvam is a principal engineer and technical leader with 20+ years building enterprise data platforms, Lakehouses, cloud architectures and AI-ready infrastructure at PepsiCo, State Street and Nike.",
+  description: "Madhan Selvam is a principal engineer and technical leader with over 2 decades building enterprise data platforms, Lakehouses, cloud architectures and AI-ready infrastructure at PepsiCo, State Street and Nike.",
   metadataBase: new URL("https://madhanselvam.me")
 };
 

@@ -121,7 +121,7 @@ export const roles: Role[] = [
 ];
 
 export const impact = [
-  { value: "20+", label: "years building enterprise data, AI and cloud platforms" },
+  { value: "2+", label: "decades building enterprise data, AI and cloud platforms" },
   { value: "10+ PB", label: "of member data integrated from 30+ sources at Nike" },
   { value: "350M+", label: "Nike members served by platforms I designed" },
   { value: "$4M+", label: "cloud cost savings from platform optimization" },
@@ -132,7 +132,7 @@ export const impact = [
 export const insights = [
   {
     title: "Modernization without disruption",
-    body: "Every era of the stack, migrated live: Mainframe → Informatica → Hadoop → Spark → cloud Lakehouse. The constant is moving production platforms forward without stopping the business.",
+    body: "Every era of the stack, migrated live: Mainframe → DWH → Datalake → Lakehouse on Cloud → AI-ready platforms. The constant is moving production platforms forward without stopping the business.",
     proof: "IBP integrations matured into enterprise capabilities across PBNA, PBUS and CAN at PepsiCo; CDH/HBase → AWS Databricks at State Street; Pig/Hive → PySpark at Nike."
   },
   {
@@ -183,4 +183,14 @@ export const trackRecord = [
   { org: "State Street", line: "Moved a regulated AML and sanctions platform from on-prem Hadoop to an AWS Databricks Lakehouse: 70% faster, 40% lower storage cost." },
   { org: "Nike", line: "Built and led member and commerce platforms — 10+ PB from 30+ sources serving 350M+ members, with $4M+ in cloud savings." },
   { org: "Banking & healthcare", line: "A decade of Mainframe and Informatica integration at TCS, Cognizant and Aroghia for Citi, Bank of America, Union Bank, Anthem and Sutter Health." }
+];
+
+// What the principal engineer role owns — shown under the /about intro.
+export const principalRoles = [
+  { title: "Technical architecture", line: "Own the end-to-end target architecture — standards, reference patterns and enterprise data models for Lakehouse, streaming and AI platforms." },
+  { title: "Technical excellence", line: "Stay hands-on in design and code reviews, performance and cost tuning — and set the bar for quality, reliability and observability." },
+  { title: "Strategy & roadmaps", line: "Turn business strategy into platform roadmaps, build-vs-buy decisions and POC-backed bets that de-risk modernization." },
+  { title: "Cross-domain collaboration", line: "Align executives, product, data science, governance and engineering across business units and global markets." },
+  { title: "Mentorship & talent", line: "Grow engineers into tech leads and leaders — scaled a global team from 5 to 27 and built a culture of continuous learning." },
+  { title: "AI-first innovation", line: "Bring GenAI, agents and MCP into the platform and the workflow — from automated root-cause agents to 35% faster delivery with Copilot." }
 ];

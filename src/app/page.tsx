@@ -27,7 +27,7 @@ export default function Home() {
           <div className="eyebrow"><span className="pulse" /> Principal Engineer · Technical Leader</div>
           <h1>{profile.name}</h1>
           <p className="role-line">{profile.tagline}</p>
-          <p className="intro">20+ years designing and modernizing enterprise data platforms — Lakehouses, data warehouses and hybrid cloud — for PepsiCo, State Street and Nike. I turn business problems into reliable, governed, AI-ready data products, and I lead the engineers who build them.</p>
+          <p className="intro">Over 2 decades designing and modernizing enterprise data platforms — Lakehouses, data warehouses and hybrid cloud — for PepsiCo, State Street and Nike. I turn business problems into reliable, governed, AI-ready data products, and I lead the engineers who build them.</p>
           <div className="hero-actions">
             <Link className="btn btn-primary" href="/projects">View my projects <span>→</span></Link>
             {profile.coffeeChat
@@ -48,13 +48,13 @@ export default function Home() {
     </section>
 
     <section id="about" className="section shell">
-      <SectionHead label="About" title="Principal engineer. Data architect." intro="I architect the data platforms enterprises run on — across consumer goods, retail, finance and healthcare." />
+      <SectionHead label="About me" title={<>Architecting and building<br />the data platforms<br />enterprises run on</>} intro="Principal engineer and data architect — turning business strategy into governed, AI-ready platforms across consumer goods, retail, banking, financial services, insurance and healthcare." />
       <TrackRecord />
       <Link className="text-link" href="/about">More about me <span>→</span></Link>
     </section>
 
     <section id="experience" className="section shell">
-      <SectionHead label="Professional Experience" title="Work and background" intro="Two decades across retail, finance, healthcare and banking — from Mainframe ETL to cloud Lakehouses and AI-ready platforms." />
+      <SectionHead label="Professional Experience" title="Work and background" intro="Over 2 decades modernizing mission-critical data platforms for consumer goods, retail, banking, financial services, insurance and healthcare — leading every shift from Mainframe and DWH to Data Lake, cloud Lakehouse and AI-ready platforms." />
       <div className="exp-list">{roles.map((r, i) => <article className="exp-card" key={r.id} data-reveal style={delay(i)}>
         <div className={`exp-logo${Array.isArray(r.logo) ? " logo-stack" : ""}`}>{[r.logo].flat().map((src) => <Image key={src} src={src} alt={`${r.employer} logo`} width={56} height={34} unoptimized />)}</div>
         <div className="exp-body">
@@ -69,7 +69,7 @@ export default function Home() {
 
     <section id="insights" className="section band">
       <div className="shell">
-        <SectionHead label="Insights" title="What twenty years of platforms taught me" intro="The patterns that repeat across every role — each backed by outcomes, not adjectives." />
+        <SectionHead label="Insights" title="What over 2 decades of platforms taught me" intro="The patterns that repeat across every role — each backed by outcomes, not adjectives." />
         <div className="insight-grid">{insights.map((ins, i) => <div className="insight" key={ins.title} data-reveal style={delay(i)}>
           <span className="insight-num">{String(i + 1).padStart(2, "0")}</span>
           <h3>{ins.title}</h3>

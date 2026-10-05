@@ -4,14 +4,14 @@ import Link from "next/link";
 import { profile } from "@/content/profile";
 import { roles } from "@/content/experience";
 
-export const metadata: Metadata = { title: "Experience", description: "Career history of Madhan Selvam — PepsiCo, State Street, Nike and a decade of enterprise ETL and Mainframe engineering for banking and healthcare." };
+export const metadata: Metadata = { title: "Experience", description: "Career history of Madhan Selvam — PepsiCo, State Street, Nike and a decade of enterprise ETL and Mainframe engineering for banking, insurance and healthcare." };
 
 export default function Experience() {
   return <main className="page">
     <header className="page-hero shell">
       <span className="section-label">Experience</span>
-      <h1>Two decades, every era of the data stack.</h1>
-      <p>From Mainframe and Informatica to Hadoop, Spark and governed cloud Lakehouses — across consumer goods, retail, finance and healthcare.</p>
+      <h1>Over 2 decades, every era of the data stack.</h1>
+      <p>From Mainframe to DWH to Datalake to Lakehouse on Cloud and AI-ready platforms — across consumer goods, retail, banking, financial services, insurance and healthcare.</p>
     </header>
 
     <section className="section shell">

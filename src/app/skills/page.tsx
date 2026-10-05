@@ -5,14 +5,14 @@ import { skillGroups } from "@/content/skills";
 import { techLogos } from "@/content/techLogos";
 import { LogoMarquee } from "@/components/LogoMarquee";
 
-export const metadata: Metadata = { title: "Skills", description: "The toolkit behind 20+ years of enterprise data engineering: Spark, Databricks, Snowflake, Kafka, Airflow, AWS, Azure, GCP and GenAI." };
+export const metadata: Metadata = { title: "Skills", description: "The toolkit behind over 2 decades of enterprise data engineering: Spark, Databricks, Snowflake, Kafka, Airflow, AWS, Azure, GCP and GenAI." };
 
 export default function Skills() {
   return <main className="page">
     <header className="page-hero shell">
       <span className="section-label">Skills</span>
       <h1>What I work with</h1>
-      <p>The full stack behind two decades of enterprise engineering — languages, platforms and practices, from Mainframe to Model Context Protocol.</p>
+      <p>The full stack behind over 2 decades of enterprise engineering — languages, platforms and practices, from Mainframe to Model Context Protocol.</p>
     </header>
     <section className="section shell">
       <div className="skill-grid">{skillGroups.map((g, i) => <div className="skill-card" key={g.label} data-reveal style={{ transitionDelay: `${Math.min(i * 40, 320)}ms` }}>
