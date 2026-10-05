@@ -30,9 +30,7 @@ export default function Home() {
           <p className="intro">Over 2 decades designing and modernizing enterprise data platforms — Lakehouses, data warehouses and hybrid cloud — for PepsiCo, State Street and Nike. I turn business problems into reliable, governed, AI-ready data products, and I lead the engineers who build them.</p>
           <div className="hero-actions">
             <Link className="btn btn-primary" href="/projects">View my projects <span>→</span></Link>
-            {profile.coffeeChat
-              ? <a className="btn btn-ghost" href={profile.coffeeChat} target="_blank" rel="noopener noreferrer">Schedule a coffee chat <span>↗</span></a>
-              : <a className="btn btn-ghost" href="#connect" title="Placeholder: set profile.coffeeChat">Schedule a coffee chat <span className="ph-dot" /></a>}
+            <Link className="btn btn-ghost" href="/contact#coffee-chat">Schedule a coffee chat <span>→</span></Link>
           </div>
         </div>
         <div className="hero-photo" data-reveal>

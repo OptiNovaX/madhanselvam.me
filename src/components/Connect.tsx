@@ -9,8 +9,8 @@ export default function Connect() {
       <div className="hero-actions center">
         <a className="btn btn-primary" href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a>
         <a className="btn btn-ghost" href={profile.github} target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
-        {profile.email ? <a className="btn btn-ghost" href={`mailto:${profile.email}`}>Email <span>↗</span></a> : <span className="btn btn-ghost is-placeholder" title="Placeholder: set profile.email">Email — placeholder</span>}
-        {profile.resume ? <a className="btn btn-ghost" href={profile.resume}>Résumé <span>↓</span></a> : <span className="btn btn-ghost is-placeholder" title="Placeholder: set profile.resume">Résumé — placeholder</span>}
+        {profile.email ? <a className="btn btn-ghost" href={`mailto:${profile.email}`}>Email <span>↗</span></a> : null}
+        {profile.resume ? <a className="btn btn-ghost" href={profile.resume}>Résumé <span>↓</span></a> : null}
       </div>
     </section>
   );
