@@ -176,3 +176,11 @@ export const education: { degree: string; field?: string; school: string; locati
     ]
   }
 ];
+
+// One line per career chapter — shown on /about and the homepage About section.
+export const trackRecord = [
+  { org: "PepsiCo", line: "Architected A&M Hub — 50+ sources unified into governed Gold data products across 20 markets — and the data foundation for Integrated Business Planning across PBNA, PBUS and CAN." },
+  { org: "State Street", line: "Moved a regulated AML and sanctions platform from on-prem Hadoop to an AWS Databricks Lakehouse: 70% faster, 40% lower storage cost." },
+  { org: "Nike", line: "Built and led member and commerce platforms — 10+ PB from 30+ sources serving 350M+ members, with $4M+ in cloud savings." },
+  { org: "Banking & healthcare", line: "A decade of Mainframe and Informatica integration at TCS, Cognizant and Aroghia for Citi, Bank of America, Union Bank, Anthem and Sutter Health." }
+];

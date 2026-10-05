@@ -10,7 +10,9 @@ import { LogoMarquee } from "@/components/LogoMarquee";
 import Placeholder from "@/components/Placeholder";
 import EduGrid from "@/components/EduGrid";
 import SectionHead from "@/components/SectionHead";
-import CertGrid from "@/components/CertGrid";
+import CertGrid, { certCount } from "@/components/CertGrid";
+import TrackRecord from "@/components/TrackRecord";
+import Connect from "@/components/Connect";
 import ProjectCard from "@/components/ProjectCard";
 
 const delay = (i: number, step = 70) => ({ transitionDelay: `${Math.min(i * step, 420)}ms` });
@@ -45,6 +47,12 @@ export default function Home() {
       <div className="impact-grid">{impact.map((item, i) => <div className="impact" key={item.label} data-reveal style={delay(i)}><strong>{item.value}</strong><span>{item.label}</span></div>)}</div>
     </section>
 
+    <section id="about" className="section shell">
+      <SectionHead label="About" title="Principal engineer. Data architect." intro="I architect the data platforms enterprises run on — across consumer goods, retail, finance and healthcare." />
+      <TrackRecord />
+      <Link className="text-link" href="/about">More about me <span>→</span></Link>
+    </section>
+
     <section id="experience" className="section shell">
       <SectionHead label="Professional Experience" title="Work and background" intro="Two decades across retail, finance, healthcare and banking — from Mainframe ETL to cloud Lakehouses and AI-ready platforms." />
       <div className="exp-list">{roles.map((r, i) => <article className="exp-card" key={r.id} data-reveal style={delay(i)}>
@@ -56,7 +64,7 @@ export default function Home() {
           <div className="tag-row">{r.stack.slice(0, 6).map((t) => <span className="tag" key={t}>{t}</span>)}</div>
         </div>
       </article>)}</div>
-      <Link className="text-link" href="/about">Read the full experience <span>→</span></Link>
+      <Link className="text-link" href="/experience">Read the full experience <span>→</span></Link>
     </section>
 
     <section id="insights" className="section band">
@@ -78,21 +86,21 @@ export default function Home() {
       <Link className="text-link" href="/skills">Explore the full toolkit <span>→</span></Link>
     </section>
 
-    <section id="projects" className="section shell">
-      <SectionHead label="Selected work" title="Data platforms & applied AI" intro="Selected work is written up on the projects page." />
-      <div className="project-grid">{projects.filter((p) => p.featured).map((p, i) => <ProjectCard key={p.slug} project={p} style={delay(i)} />)}</div>
-      <Link className="text-link" href="/projects">More projects <span>→</span></Link>
-    </section>
-
     <section id="certifications" className="section shell">
       <SectionHead label="Certifications" title="Always learning, always applying" />
-      <CertGrid />
-      <Link className="text-link" href="/certifications">All certifications <span>→</span></Link>
+      <CertGrid limit={6} />
+      <Link className="text-link" href="/certifications">All {certCount} certifications <span>→</span></Link>
     </section>
 
     <section id="education" className="section shell">
       <SectionHead label="Education" title="Foundations" />
       <EduGrid />
+    </section>
+
+    <section id="projects" className="section shell">
+      <SectionHead label="Selected work" title="Data platforms & applied AI" intro="Selected work is written up on the projects page." />
+      <div className="project-grid">{projects.filter((p) => p.featured).map((p, i) => <ProjectCard key={p.slug} project={p} style={delay(i)} />)}</div>
+      <Link className="text-link" href="/projects">More projects <span>→</span></Link>
     </section>
 
     <section id="reading" className="section shell">
@@ -117,16 +125,6 @@ export default function Home() {
       </div>
     </section>
 
-    <section id="connect" className="section shell connect" data-reveal>
-      <span className="section-label">Let&apos;s connect</span>
-      <h2>Good systems make room for better ideas.</h2>
-      <p>Open to conversations on data platforms, Lakehouse architecture, platform modernization and applied AI.</p>
-      <div className="hero-actions center">
-        <a className="btn btn-primary" href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a>
-        <a className="btn btn-ghost" href={profile.github} target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
-        {profile.email ? <a className="btn btn-ghost" href={`mailto:${profile.email}`}>Email <span>↗</span></a> : <span className="btn btn-ghost is-placeholder" title="Placeholder: set profile.email">Email — placeholder</span>}
-        {profile.resume ? <a className="btn btn-ghost" href={profile.resume}>Résumé <span>↓</span></a> : <span className="btn btn-ghost is-placeholder" title="Placeholder: set profile.resume">Résumé — placeholder</span>}
-      </div>
-    </section>
+    <Connect />
   </main>;
 }

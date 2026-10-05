@@ -7,10 +7,13 @@ export default function SiteFooter() {
       <div className="shell site-footer-inner">
         <span>© {new Date().getFullYear()} {profile.name}</span>
         <div>
+          <Link href="/">Home</Link>
           <Link href="/about">About</Link>
-          <Link href="/projects">Projects</Link>
+          <Link href="/experience">Experience</Link>
           <Link href="/skills">Skills</Link>
           <Link href="/certifications">Certifications</Link>
+          <Link href="/projects">Projects</Link>
+          <Link href="/contact">Contact</Link>
           <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>

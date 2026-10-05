@@ -8,16 +8,17 @@ import { profile } from "@/content/profile";
 const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
+  { href: "/experience", label: "Experience" },
   { href: "/skills", label: "Skills" },
-  { href: "/certifications", label: "Certifications" }
+  { href: "/certifications", label: "Certifications" },
+  { href: "/projects", label: "Projects" },
+  { href: "/contact", label: "Contact" }
 ] as const;
 
 const sections = [
-  { href: "/#experience", label: "Experience" },
   { href: "/#insights", label: "Insights" },
-  { href: "/#reading", label: "Reading" },
-  { href: "/#connect", label: "Let's connect" }
+  { href: "/#education", label: "Education" },
+  { href: "/#reading", label: "Reading" }
 ] as const;
 
 export default function SiteNav() {
@@ -40,7 +41,7 @@ export default function SiteNav() {
       <div className="shell site-nav-inner">
         <Link className="wordmark" href="/">{profile.initials}<span>.</span></Link>
         <nav className="site-nav-links" aria-label="Primary">
-          {links.slice(1).map((l) => <Link key={l.href} href={l.href} className={pathname === l.href ? "active" : undefined}>{l.label}</Link>)}
+          {links.map((l) => <Link key={l.href} href={l.href} className={pathname === l.href ? "active" : undefined}>{l.label}</Link>)}
         </nav>
         <button className="menu-btn" aria-expanded={open} aria-controls="site-menu" aria-label={open ? "Close navigation" : "Open navigation"} onClick={() => setOpen((v) => !v)}>
           <span /><span />

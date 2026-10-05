@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { profile } from "@/content/profile";
-import { roles } from "@/content/experience";
 import EduGrid from "@/components/EduGrid";
+import TrackRecord from "@/components/TrackRecord";
 import { lab } from "@/content/extras";
 
-export const metadata: Metadata = { title: "About", description: "Career history of Madhan Selvam — PepsiCo, State Street, Nike and a decade of enterprise ETL and Mainframe engineering." };
+export const metadata: Metadata = { title: "About", description: "Madhan Selvam — principal engineer and data architect: track record, architecture principles, education and an after-hours AI lab." };
 
 const principles = [
   "Own the target architecture end to end — Lakehouse, streaming and batch platforms designed for scale, cost and AI/ML readiness, not just the next release.",
@@ -17,20 +16,13 @@ const principles = [
   "Govern by design — lineage, quality, observability and privacy (GDPR, CCPA, DPA, HIPAA) engineered into the platform from day one."
 ];
 
-const trackRecord = [
-  { org: "PepsiCo", line: "Architected A&M Hub — 50+ sources unified into governed Gold data products across 20 markets — and the data foundation for Integrated Business Planning across PBNA, PBUS and CAN." },
-  { org: "State Street", line: "Moved a regulated AML and sanctions platform from on-prem Hadoop to an AWS Databricks Lakehouse: 70% faster, 40% lower storage cost." },
-  { org: "Nike", line: "Built and led member and commerce platforms — 10+ PB from 30+ sources serving 350M+ members, with $4M+ in cloud savings." },
-  { org: "Banking & healthcare", line: "A decade of Mainframe and Informatica integration at TCS, Cognizant and Aroghia for Citi, Bank of America, Union Bank, Anthem and Sutter Health." }
-];
-
 export default function About() {
   return <main className="page">
     <header className="page-hero shell">
       <span className="section-label">About</span>
       <h1>Building systems that endure.</h1>
       <p>I&apos;m {profile.name} — a principal engineer who architects the data platforms enterprises run on. For 20+ years I&apos;ve taken mission-critical systems from Mainframe to Hadoop to governed, AI-ready Lakehouses on AWS and Azure Databricks, across consumer goods, retail, finance and healthcare.</p>
-      <ul className="track">{trackRecord.map((t) => <li key={t.org}><strong>{t.org}</strong><span>{t.line}</span></li>)}</ul>
+      <TrackRecord />
     </header>
 
     <section className="section shell two-col">
@@ -55,21 +47,7 @@ export default function About() {
     </section>
 
     <section className="section shell">
-      <span className="section-label">Professional experience</span>
-      <div className="timeline">{roles.map((r) => <article className="timeline-item" key={r.id} id={r.id} data-reveal>
-        <div className={`timeline-node${Array.isArray(r.logo) ? " logo-stack" : ""}`}>{[r.logo].flat().map((src) => <Image key={src} src={src} alt={`${r.employer} logo`} width={48} height={30} unoptimized />)}</div>
-        <div className="timeline-body">
-          <div className="exp-top"><h2>{r.role}</h2><span className="exp-years">{r.years}</span></div>
-          <p className="exp-meta">{r.employer}{r.location ? ` · ${r.location}` : ""}</p>
-          <p className="exp-summary">{r.summary}</p>
-          {r.highlights.length > 0 && <ul className="highlights">{r.highlights.map((h) => <li key={h}>{h}</li>)}</ul>}
-          {r.chapters?.map((c) => <div className="chapter" key={c.name}>
-            <h3>{c.name} <span>{c.years}</span></h3>
-            <ul className="highlights">{c.highlights.map((h) => <li key={h}>{h}</li>)}</ul>
-          </div>)}
-          <div className="tag-row">{r.stack.map((t) => <span className="tag" key={t}>{t}</span>)}</div>
-        </div>
-      </article>)}</div>
+      <Link className="text-link" href="/experience">See the full career timeline <span>→</span></Link>
     </section>
 
     <section className="section shell">

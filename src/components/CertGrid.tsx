@@ -2,10 +2,12 @@ import Image from "next/image";
 import type { CSSProperties } from "react";
 import { certifications } from "@/content/credentials";
 
+export const certCount = certifications.length;
+
 const delay = (i: number): CSSProperties => ({ transitionDelay: `${Math.min(i * 40, 320)}ms` });
 
-export default function CertGrid() {
-  return <div className="cert-grid">{certifications.map((c, i) => {
+export default function CertGrid({ limit }: { limit?: number }) {
+  return <div className="cert-grid">{certifications.slice(0, limit).map((c, i) => {
     const inner = <>
       <div className="cert-logo">{c.logo ? <Image src={c.logo} alt="" width={36} height={24} unoptimized /> : <span>{c.issuer[0]}</span>}</div>
       <div><h3>{c.title}</h3><p>{c.issuer}{c.year ? ` · ${c.year}` : ""}{c.meta ? ` · ${c.meta}` : ""}</p></div>
