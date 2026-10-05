@@ -9,13 +9,13 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
-  { href: "/skills", label: "Skills" }
+  { href: "/skills", label: "Skills" },
+  { href: "/certifications", label: "Certifications" }
 ] as const;
 
 const sections = [
   { href: "/#experience", label: "Experience" },
   { href: "/#insights", label: "Insights" },
-  { href: "/#certifications", label: "Certifications" },
   { href: "/#reading", label: "Reading" },
   { href: "/#connect", label: "Let's connect" }
 ] as const;

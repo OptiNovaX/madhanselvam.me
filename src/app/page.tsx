@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { profile } from "@/content/profile";
-import { roles, impact, insights, education } from "@/content/experience";
-import { certifications } from "@/content/credentials";
+import { roles, impact, insights } from "@/content/experience";
 import { projects } from "@/content/projects";
 import { skillGroups } from "@/content/skills";
 import { books, publications, posts } from "@/content/extras";
 import { techLogos } from "@/content/techLogos";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import Placeholder from "@/components/Placeholder";
+import EduGrid from "@/components/EduGrid";
 import SectionHead from "@/components/SectionHead";
+import CertGrid from "@/components/CertGrid";
 import ProjectCard from "@/components/ProjectCard";
 
 const delay = (i: number, step = 70) => ({ transitionDelay: `${Math.min(i * step, 420)}ms` });
@@ -50,7 +51,7 @@ export default function Home() {
         <div className={`exp-logo${Array.isArray(r.logo) ? " logo-stack" : ""}`}>{[r.logo].flat().map((src) => <Image key={src} src={src} alt={`${r.employer} logo`} width={56} height={34} unoptimized />)}</div>
         <div className="exp-body">
           <div className="exp-top"><h3>{r.role}</h3><span className="exp-years">{r.years}</span></div>
-          <p className="exp-meta">{r.employer} · {r.location}</p>
+          <p className="exp-meta">{r.employer}{r.location ? ` · ${r.location}` : ""}</p>
           <p className="exp-summary">{r.summary}</p>
           <div className="tag-row">{r.stack.slice(0, 6).map((t) => <span className="tag" key={t}>{t}</span>)}</div>
         </div>
@@ -85,23 +86,13 @@ export default function Home() {
 
     <section id="certifications" className="section shell">
       <SectionHead label="Certifications" title="Always learning, always applying" />
-      <div className="cert-grid">{certifications.map((c, i) => {
-        const inner = <>
-          <div className="cert-logo">{c.logo ? <Image src={c.logo} alt="" width={36} height={24} unoptimized /> : <span>{c.issuer[0]}</span>}</div>
-          <div><h3>{c.title}</h3><p>{c.issuer}{c.year ? ` · ${c.year}` : ""}{c.meta ? ` · ${c.meta}` : ""}</p></div>
-        </>;
-        return c.href
-          ? <a className="cert" key={c.title} href={c.href} target="_blank" rel="noopener noreferrer" data-reveal style={delay(i, 40)}>{inner}</a>
-          : <div className="cert" key={c.title} data-reveal style={delay(i, 40)}>{inner}</div>;
-      })}</div>
+      <CertGrid />
+      <Link className="text-link" href="/certifications">All certifications <span>→</span></Link>
     </section>
 
     <section id="education" className="section shell">
       <SectionHead label="Education" title="Foundations" />
-      <div className="edu-grid">{education.map((e) => <div className="edu" key={e.degree} data-reveal>
-        <h3>{e.degree}</h3>
-        <p>{e.href ? <a href={e.href} target="_blank" rel="noopener noreferrer">{e.school}</a> : e.school || <span className="ph-inline">Placeholder — institution name</span>}{e.years ? ` · ${e.years}` : ""}</p>
-      </div>)}</div>
+      <EduGrid />
     </section>
 
     <section id="reading" className="section shell">

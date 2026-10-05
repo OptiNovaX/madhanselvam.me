@@ -177,7 +177,14 @@ a.cert:hover{border-color:rgba(168,205,232,.35)}
 .edu{padding:22px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
 .edu h3{font-size:15px;margin:0 0 6px}
 .edu p{font-size:13px;color:var(--muted);margin:0}
-.edu p a{color:var(--accent)}
+.edu .edu-field{color:var(--ink);font-size:14px;margin:0 0 8px}
+.edu h3 a{color:var(--ink);text-decoration:none}
+.edu h3 a:hover{color:var(--accent)}
+.edu-courses{list-style:none;margin:14px 0 0;padding:12px 0 0;border-top:1px solid var(--line);display:grid;gap:8px}
+.edu-courses li{display:flex;justify-content:space-between;gap:12px;font-size:13px}
+.edu-courses a{color:var(--ink);text-decoration:none}
+.edu-courses a:hover{color:var(--accent)}
+.edu-courses span{color:var(--muted)}
 @media(max-width:720px){.cert-grid,.edu-grid{grid-template-columns:1fr}}
 
 /* Placeholders */
@@ -249,3 +256,32 @@ a.cert:hover{border-color:rgba(168,205,232,.35)}
   [data-reveal]{opacity:1;transform:none;transition:none}
   .marquee-track{width:100%;flex-wrap:wrap;justify-content:center}
 }
+
+/* About: "Beyond work" terminal */
+.lab-intro{font-size:14px;color:#d4d4d4;line-height:1.7;margin:16px 0 18px}
+.terminal{border:1px solid var(--line-strong);border-radius:14px;background:#0a0a0a;overflow:hidden;font-family:var(--font-mono),monospace;box-shadow:0 20px 60px -30px rgba(80,140,200,.35)}
+.terminal-bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:var(--bg-raised);border-bottom:1px solid var(--line)}
+.terminal-bar i{width:10px;height:10px;border-radius:50%;background:#ff5f57}
+.terminal-bar i:nth-child(2){background:#febc2e}
+.terminal-bar i:nth-child(3){background:#28c840}
+.terminal-bar span{margin-left:8px;font-size:11px;color:var(--muted)}
+.terminal-body{padding:16px 18px 18px;font-size:12.5px;line-height:1.6}
+.terminal-body p{margin:0}
+.terminal .prompt{color:var(--ink)}
+.terminal .prompt::before{content:'$ ';color:#28c840}
+.terminal ul{list-style:none;margin:6px 0 14px;padding:0;display:grid;gap:8px}
+.terminal li{display:grid;gap:1px}
+.terminal li a{color:var(--accent);text-decoration:none;width:fit-content}
+.terminal li a:hover{text-decoration:underline}
+.terminal li span{color:var(--muted)}
+.terminal-out{color:var(--muted);margin:6px 0 14px!important}
+.cursor{display:inline-block;width:8px;height:15px;background:var(--accent);vertical-align:-3px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.cursor{animation:none}}
+
+/* About: hero track record */
+.track{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:980px}
+.track li{padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--card);display:grid;gap:6px;align-content:start}
+.track strong{font-size:13px;color:var(--accent);letter-spacing:.02em}
+.track span{font-size:13px;color:#d4d4d4;line-height:1.6}
+@media(max-width:720px){.track{grid-template-columns:1fr}}

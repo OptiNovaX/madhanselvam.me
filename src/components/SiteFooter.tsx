@@ -10,6 +10,7 @@ export default function SiteFooter() {
           <Link href="/about">About</Link>
           <Link href="/projects">Projects</Link>
           <Link href="/skills">Skills</Link>
+          <Link href="/certifications">Certifications</Link>
           <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>

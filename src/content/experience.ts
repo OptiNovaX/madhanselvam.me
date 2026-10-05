@@ -3,7 +3,7 @@ export type Role = {
   id: string;
   years: string;
   employer: string;
-  location: string;
+  location?: string;
   logo: string | string[];
   role: string;
   summary: string;
@@ -106,7 +106,7 @@ export const roles: Role[] = [
     id: "early-career",
     years: "May 2004 — Dec 2013",
     employer: "Aroghia · TCS · Cognizant · Sukraa",
-    location: "California · India · USA",
+    location: "India/USA",
     logo: ["/logos/aroghia.svg", "/logos/tcs.svg", "/logos/cognizant.png", "/logos/sukraa.png"],
     role: "Lead ETL Developer · Senior Consultant · Programmer Analyst · Software Engineer",
     summary: "A decade of ETL, data integration, data warehousing and Mainframe engineering for banking and healthcare.",
@@ -162,8 +162,17 @@ export const insights = [
   }
 ];
 
-export const education: { degree: string; school: string; years: string; href?: string }[] = [
-  // PLACEHOLDER: add the institution name for the B.E. degree.
-  { degree: "Bachelor's Degree in Engineering — Information Technology", school: "", years: "2004" },
-  { degree: "Specialization in Leadership and Management", school: "Harvard Business School Online", years: "", href: "https://online.hbs.edu/verify-certificate?dvid=6PCMSXA8" }
+export const education: { degree: string; field?: string; school: string; location?: string; years: string; href?: string; courses?: { title: string; year: string; href: string }[] }[] = [
+  { degree: "Bachelor's Degree in Engineering", field: "Information Technology", school: "Manonmaniam Sundaranar University", location: "Tirunelveli, Tamil Nadu, India", years: "2004" },
+  {
+    degree: "Harvard Business School",
+    school: "Certificates",
+    years: "2022–2024",
+    courses: [
+      { title: "Specialization in Leadership and Management", year: "2024", href: "https://online.hbs.edu/verify-certificate?dvid=6PCMSXA8" },
+      { title: "Strategy Execution", year: "2024", href: "https://online.hbs.edu/verify-certificate?dvid=F542AKT7" },
+      { title: "Leadership Principles", year: "2023", href: "https://online.hbs.edu/verify-certificate?dvid=XNQZVP4L" },
+      { title: "Management Essentials", year: "2022", href: "https://online.hbs.edu/verify-certificate?dvid=BXWKO8LQ" }
+    ]
+  }
 ];
