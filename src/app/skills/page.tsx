@@ -12,10 +12,10 @@ export default function Skills() {
     <header className="page-hero shell">
       <span className="section-label">Skills</span>
       <h1>What I work with</h1>
-      <p>The full stack behind over 2 decades of enterprise engineering — languages, platforms and practices, from Mainframe to Model Context Protocol.</p>
+      <p>Over 2 decades of choosing the right technology, standardizing it across teams and running it at enterprise scale — from Mainframe and DWH to cloud Lakehouse, real-time streaming and AI agents on MCP.</p>
     </header>
     <section className="section shell">
-      <div className="skill-grid">{skillGroups.map((g, i) => <div className="skill-card" key={g.label} data-reveal style={{ transitionDelay: `${Math.min(i * 40, 320)}ms` }}>
+      <div className="skill-grid">{skillGroups.map((g, i) => <div className="skill-card" key={g.label} data-reveal style={{ transitionDelay: `${Math.min(i * 40, 180)}ms` }}>
         <h2>{g.label}</h2>
         <p>{g.note}</p>
         <div className="tag-row">{g.tags.map((t) => <span className="tag" key={t}>{t}</span>)}</div>

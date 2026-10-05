@@ -11,7 +11,7 @@ export default function Experience() {
     <header className="page-hero shell">
       <span className="section-label">Experience</span>
       <h1>Over 2 decades, every era of the data stack.</h1>
-      <p>From Mainframe to DWH to Datalake to Lakehouse on Cloud and AI-ready platforms — across consumer goods, retail, banking, financial services, insurance and healthcare.</p>
+      <p>A principal engineer who sets the technical direction for the data platforms enterprises run on. For over 2 decades I&apos;ve led the shift from Mainframe to DWH to Data Lake to cloud Lakehouse and AI-ready platforms across consumer goods, retail, banking, financial services, insurance and healthcare — owning the architecture, raising the engineering bar, aligning business and technology leaders, and growing the engineers who build what comes next.</p>
     </header>
 
     <section className="section shell">

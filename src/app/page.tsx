@@ -12,10 +12,11 @@ import EduGrid from "@/components/EduGrid";
 import SectionHead from "@/components/SectionHead";
 import CertGrid, { certCount } from "@/components/CertGrid";
 import TrackRecord from "@/components/TrackRecord";
+import HeroCerts from "@/components/HeroCerts";
 import Connect from "@/components/Connect";
 import ProjectCard from "@/components/ProjectCard";
 
-const delay = (i: number, step = 70) => ({ transitionDelay: `${Math.min(i * step, 420)}ms` });
+const delay = (i: number, step = 70) => ({ transitionDelay: `${Math.min(i * step, 180)}ms` });
 
 export default function Home() {
   return <main>
@@ -29,15 +30,11 @@ export default function Home() {
           <p className="role-line">{profile.tagline}</p>
           <p className="intro">Over 2 decades designing and modernizing enterprise data platforms — Lakehouses, data warehouses and hybrid cloud — for PepsiCo, State Street and Nike. I turn business problems into reliable, governed, AI-ready data products, and I lead the engineers who build them.</p>
           <div className="hero-actions">
-            <Link className="btn btn-primary" href="/projects">View my projects <span>→</span></Link>
+            <Link className="btn btn-primary" href="/experience">View my experience <span>→</span></Link>
             <Link className="btn btn-ghost" href="/contact#coffee-chat">Schedule a coffee chat <span>→</span></Link>
           </div>
         </div>
-        <div className="hero-photo" data-reveal>
-          {profile.headshot
-            ? <Image src={profile.headshot} alt={profile.name} width={320} height={320} priority />
-            : <div className="photo-placeholder"><span>{profile.initials}</span><small>Placeholder — add a headshot<br />(profile.headshot)</small></div>}
-        </div>
+        <HeroCerts />
       </div>
     </section>
 
@@ -46,7 +43,7 @@ export default function Home() {
     </section>
 
     <section id="about" className="section shell">
-      <SectionHead label="About me" title={<>Architecting and building<br />the data platforms<br />enterprises run on</>} intro="Principal engineer and data architect — turning business strategy into governed, AI-ready platforms across consumer goods, retail, banking, financial services, insurance and healthcare." />
+      <SectionHead label="About me" title={<>Architecting and building<br />the data platforms<br />enterprises run on</>} intro={`I'm ${profile.name} — a principal engineer who sets the technical direction for the data platforms enterprises run on. For over 2 decades I've led the shift from Mainframe to DWH to Data Lake to cloud Lakehouse and AI-ready platforms — owning the architecture, raising the engineering bar, aligning business and technology leaders, and growing the engineers who build what comes next.`} />
       <TrackRecord />
       <Link className="text-link" href="/about">More about me <span>→</span></Link>
     </section>

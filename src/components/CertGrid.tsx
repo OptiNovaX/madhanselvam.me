@@ -4,7 +4,7 @@ import { certifications } from "@/content/credentials";
 
 export const certCount = certifications.length;
 
-const delay = (i: number): CSSProperties => ({ transitionDelay: `${Math.min(i * 40, 320)}ms` });
+const delay = (i: number): CSSProperties => ({ transitionDelay: `${Math.min(i * 40, 180)}ms` });
 
 export default function CertGrid({ limit }: { limit?: number }) {
   return <div className="cert-grid">{certifications.slice(0, limit).map((c, i) => {

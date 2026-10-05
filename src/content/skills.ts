@@ -10,6 +10,6 @@ export const skillGroups = [
   { label: "Modeling & Viz", note: "Turning modelled data into something a stakeholder can read.", tags: ["ER-Studio", "Tableau", "Power BI"] },
   { label: "DevOps & IaC", note: "Version control, CI/CD and infrastructure as code.", tags: ["GitHub", "Bitbucket", "Jenkins", "Terraform"] },
   { label: "AI / GenAI", note: "Retrieval, agents and assisted engineering on foundation models.", tags: ["Microsoft Copilot", "Claude", "OpenAI", "LLMs & Prompt Engineering", "RAG & Embeddings", "AI Agents / Agentic AI", "Model Context Protocol (MCP)"] },
-  { label: "Legacy Systems", note: "Mainframe workloads and their modernization.", tags: ["Mainframe — COBOL, JCL, VSAM, CICS"] },
+  { label: "Legacy Systems", note: "Mainframe workloads and their modernization.", tags: ["Mainframe", "COBOL", "JCL", "VSAM", "CICS"] },
   { label: "Leadership", note: "How I work with people and teams.", tags: ["Technical Leadership", "Architecture Reviews", "Mentoring", "Stakeholder Alignment", "Delivery Management"] }
 ];

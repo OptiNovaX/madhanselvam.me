@@ -15,7 +15,7 @@ export default function Projects() {
       <p>Lakehouse patterns, Spark performance and applied AI for data engineering. Write-ups are in progress.</p>
     </header>
     <section className="section shell">
-      <div className="project-grid">{projects.map((p, i) => <ProjectCard key={p.slug} project={p} style={{ transitionDelay: `${Math.min(i * 60, 360)}ms` }} />)}</div>
+      <div className="project-grid">{projects.map((p, i) => <ProjectCard key={p.slug} project={p} style={{ transitionDelay: `${Math.min(i * 60, 180)}ms` }} />)}</div>
     </section>
     <section className="section shell">
       <span className="section-label">Notebooks and datasets</span>

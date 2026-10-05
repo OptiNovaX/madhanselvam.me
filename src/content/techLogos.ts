@@ -1,22 +1,22 @@
 export const techLogos = [
   { slug: "python", name: "Python", href: "https://www.python.org/" },
   { slug: "scala", name: "Scala", href: "https://www.scala-lang.org/" },
-  { slug: "openjdk", name: "Java", href: "https://openjdk.org/" },
+  { slug: "openjdk", color: "e6e8eb", name: "Java", href: "https://openjdk.org/" },
   { slug: "apachespark", name: "Apache Spark", href: "https://spark.apache.org/" },
   { slug: "apachehadoop", name: "Apache Hadoop", href: "https://hadoop.apache.org/" },
   { slug: "apachehive", name: "Apache Hive", href: "https://hive.apache.org/" },
-  { slug: "apachekafka", name: "Apache Kafka", href: "https://kafka.apache.org/" },
+  { slug: "apachekafka", color: "e6e8eb", name: "Apache Kafka", href: "https://kafka.apache.org/" },
   { slug: "apacheairflow", name: "Apache Airflow", href: "https://airflow.apache.org/" },
   { slug: "databricks", name: "Databricks", href: "https://www.databricks.com/" },
   { slug: "snowflake", name: "Snowflake", href: "https://www.snowflake.com/" },
   { slug: "googlecloud", name: "Google Cloud", href: "https://cloud.google.com/" },
   { slug: "googlebigquery", name: "BigQuery", href: "https://cloud.google.com/bigquery" },
   { slug: "terraform", name: "Terraform", href: "https://www.terraform.io/" },
-  { slug: "github", name: "GitHub", href: "https://github.com/" },
+  { slug: "github", color: "e6e8eb", name: "GitHub", href: "https://github.com/" },
   { slug: "jenkins", name: "Jenkins", href: "https://www.jenkins.io/" },
   { slug: "mysql", name: "MySQL", href: "https://www.mysql.com/" },
   { slug: "teradata", name: "Teradata", href: "https://www.teradata.com/" },
   { slug: "cloudera", name: "Cloudera", href: "https://www.cloudera.com/" },
   { slug: "docker", name: "Docker", href: "https://www.docker.com/" },
-  { slug: "anthropic", name: "Anthropic Claude", href: "https://www.anthropic.com/" }
-].map((item) => ({ ...item, logo: `https://cdn.simpleicons.org/${item.slug}` }));
+  { slug: "anthropic", color: "e6e8eb", name: "Anthropic Claude", href: "https://www.anthropic.com/" }
+].map((item: { slug: string; name: string; href: string; color?: string }) => ({ ...item, logo: `https://cdn.simpleicons.org/${item.slug}${item.color ? `/${item.color}` : ""}` }));
